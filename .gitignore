@@ -1,0 +1,39 @@
+# macOS
+.DS_Store
+.AppleDouble
+
+# Xcode
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.xcworkspace/xcuserdata/
+
+# Build artifacts
+build/
+
+# DMG / archives
+*.dmg
+*.zip
+
+# Personal / working files
+1.png
+2.png
+3.png
+4.png
+5.png
+6.png
+7.png
+case.blend
+reversepi.rtf
+PiControl_code.zip
+gen_xcodeproj.py
+SETUP.md
+
+# Unused formats
+*.mkv
+
+# Separate projects
+landing/
+raspberry/
+repopicontrol/
+PiControl/Pironman5 controller/

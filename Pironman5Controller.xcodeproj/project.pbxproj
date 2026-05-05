@@ -1,0 +1,389 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0AF4AEA81CED51226B6D2D71 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A2B0BCB458F9D0B516F03 /* MenuBarView.swift */; };
+		177CEB87506D9C507F0369D1 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82898C545167531BF70C77E1 /* Components.swift */; };
+		3BBAA6832FA7E1D9009DC8B9 /* pivid30000-0096.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3BBAA6822FA7E1D9009DC8B9 /* pivid30000-0096.mp4 */; };
+		3BBAA6872FA91C62009DC8B9 /* pivid50000-0096.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3BBAA6862FA91C62009DC8B9 /* pivid50000-0096.mp4 */; };
+		3BBAA68B2FA92818009DC8B9 /* tuto.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3BBAA68A2FA92818009DC8B9 /* tuto.mp4 */; };
+		575C1159C9E341A4CD6AE66E /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E8B456DD56EA39674841EB /* ConfigManager.swift */; };
+		5C13E9A67FFBD7DDD5ED7971 /* CommandState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894BD61FF7412B218B1DE296 /* CommandState.swift */; };
+		64DDF1E77E6D541207C5F784 /* SSHManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C3A961FD003E4A5B0FDEAF /* SSHManager.swift */; };
+		8139624898A349ADA4ED5613 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A48F4CE5EDCAA60D410E3 /* SettingsView.swift */; };
+		834F5C4A2EE7A459D684A751 /* PironmanAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1FA1940B480DA58F0EA86E /* PironmanAPI.swift */; };
+		AA000001AA000001AA000001 /* PiModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100001AA100001AA100001 /* PiModels.swift */; };
+		AA000002AA000002AA000002 /* PiSSHManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100002AA100002AA100002 /* PiSSHManager.swift */; };
+		AA000003AA000003AA000003 /* RaspberryPiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100003AA100003AA100003 /* RaspberryPiManager.swift */; };
+		AA000004AA000004AA000004 /* PiRaspberryTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100004AA100004AA100004 /* PiRaspberryTabView.swift */; };
+		AA000005AA000005AA000005 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100005AA100005AA100005 /* OnboardingView.swift */; };
+		DC5F40D0F5C4CC5D981381C1 /* PiControlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15779F52D4409853B3A4B940 /* PiControlApp.swift */; };
+		FF84DF27CDE42CD3685C706F /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0427AB45271F8CA979DD94C /* KeychainHelper.swift */; };
+		AA200002AA200002AA200002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA200001AA200001AA200001 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		15779F52D4409853B3A4B940 /* PiControlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiControlApp.swift; sourceTree = "<group>"; };
+		2C090C541E206D79AB76701F /* Pironman5 Controller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pironman5 Controller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BBAA6822FA7E1D9009DC8B9 /* pivid30000-0096.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pivid30000-0096.mp4"; sourceTree = "<group>"; };
+		3BBAA6862FA91C62009DC8B9 /* pivid50000-0096.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pivid50000-0096.mp4"; sourceTree = "<group>"; };
+		3BBAA68A2FA92818009DC8B9 /* tuto.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = tuto.mp4; sourceTree = "<group>"; };
+		7C1FA1940B480DA58F0EA86E /* PironmanAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PironmanAPI.swift; sourceTree = "<group>"; };
+		82898C545167531BF70C77E1 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		86B3BC083DF59791BE56CFAE /* PiControl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PiControl.entitlements; sourceTree = "<group>"; };
+		894BD61FF7412B218B1DE296 /* CommandState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandState.swift; sourceTree = "<group>"; };
+		91E8B456DD56EA39674841EB /* ConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigManager.swift; sourceTree = "<group>"; };
+		97C3A961FD003E4A5B0FDEAF /* SSHManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSHManager.swift; sourceTree = "<group>"; };
+		AA100001AA100001AA100001 /* PiModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiModels.swift; sourceTree = "<group>"; };
+		AA100002AA100002AA100002 /* PiSSHManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiSSHManager.swift; sourceTree = "<group>"; };
+		AA100003AA100003AA100003 /* RaspberryPiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaspberryPiManager.swift; sourceTree = "<group>"; };
+		AA100004AA100004AA100004 /* PiRaspberryTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiRaspberryTabView.swift; sourceTree = "<group>"; };
+		AA100005AA100005AA100005 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		B0427AB45271F8CA979DD94C /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		B21A48F4CE5EDCAA60D410E3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D77A2B0BCB458F9D0B516F03 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		E7E7CA9F4DF8A3E05631F826 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA200001AA200001AA200001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F6F5CC3FCCF73F75AE9CCF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1BADDC1D73C1A20F347483E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C090C541E206D79AB76701F /* Pironman5 Controller.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8D3FC6DB5D0827F168A73277 = {
+			isa = PBXGroup;
+			children = (
+				BB02FE6C4678B79B215868AF /* PiControl */,
+				1BADDC1D73C1A20F347483E1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BB02FE6C4678B79B215868AF /* PiControl */ = {
+			isa = PBXGroup;
+			children = (
+				3BBAA68A2FA92818009DC8B9 /* tuto.mp4 */,
+				3BBAA6862FA91C62009DC8B9 /* pivid50000-0096.mp4 */,
+				3BBAA6822FA7E1D9009DC8B9 /* pivid30000-0096.mp4 */,
+				15779F52D4409853B3A4B940 /* PiControlApp.swift */,
+				91E8B456DD56EA39674841EB /* ConfigManager.swift */,
+				97C3A961FD003E4A5B0FDEAF /* SSHManager.swift */,
+				B0427AB45271F8CA979DD94C /* KeychainHelper.swift */,
+				894BD61FF7412B218B1DE296 /* CommandState.swift */,
+				7C1FA1940B480DA58F0EA86E /* PironmanAPI.swift */,
+				82898C545167531BF70C77E1 /* Components.swift */,
+				D77A2B0BCB458F9D0B516F03 /* MenuBarView.swift */,
+				B21A48F4CE5EDCAA60D410E3 /* SettingsView.swift */,
+				AA100001AA100001AA100001 /* PiModels.swift */,
+				AA100002AA100002AA100002 /* PiSSHManager.swift */,
+				AA100003AA100003AA100003 /* RaspberryPiManager.swift */,
+				AA100004AA100004AA100004 /* PiRaspberryTabView.swift */,
+				AA100005AA100005AA100005 /* OnboardingView.swift */,
+				E7E7CA9F4DF8A3E05631F826 /* Info.plist */,
+				86B3BC083DF59791BE56CFAE /* PiControl.entitlements */,
+				AA200001AA200001AA200001 /* Assets.xcassets */,
+			);
+			path = PiControl;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42AEFBAE01D2DFD981F7DA7D /* Pironman5 Controller */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAF116FE40D68E4ABB26094B /* Build configuration list for PBXNativeTarget "Pironman5 Controller" */;
+			buildPhases = (
+				F2AB5FB218DA8B84623F4557 /* Sources */,
+				4F6F5CC3FCCF73F75AE9CCF4 /* Frameworks */,
+				55B558C7EF820E6E00E5993B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pironman5 Controller";
+			productName = "Pironman5 Controller";
+			productReference = 2C090C541E206D79AB76701F /* Pironman5 Controller.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		46F86FAA6BBF9AC94A7E4595 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					42AEFBAE01D2DFD981F7DA7D = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 56283EBD6DD86A56CED63937 /* Build configuration list for PBXProject "Pironman5Controller" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8D3FC6DB5D0827F168A73277;
+			productRefGroup = 1BADDC1D73C1A20F347483E1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42AEFBAE01D2DFD981F7DA7D /* Pironman5 Controller */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		55B558C7EF820E6E00E5993B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BBAA6832FA7E1D9009DC8B9 /* pivid30000-0096.mp4 in Resources */,
+				3BBAA68B2FA92818009DC8B9 /* tuto.mp4 in Resources */,
+				3BBAA6872FA91C62009DC8B9 /* pivid50000-0096.mp4 in Resources */,
+				AA200002AA200002AA200002 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F2AB5FB218DA8B84623F4557 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC5F40D0F5C4CC5D981381C1 /* PiControlApp.swift in Sources */,
+				575C1159C9E341A4CD6AE66E /* ConfigManager.swift in Sources */,
+				64DDF1E77E6D541207C5F784 /* SSHManager.swift in Sources */,
+				FF84DF27CDE42CD3685C706F /* KeychainHelper.swift in Sources */,
+				5C13E9A67FFBD7DDD5ED7971 /* CommandState.swift in Sources */,
+				834F5C4A2EE7A459D684A751 /* PironmanAPI.swift in Sources */,
+				177CEB87506D9C507F0369D1 /* Components.swift in Sources */,
+				0AF4AEA81CED51226B6D2D71 /* MenuBarView.swift in Sources */,
+				8139624898A349ADA4ED5613 /* SettingsView.swift in Sources */,
+				AA000001AA000001AA000001 /* PiModels.swift in Sources */,
+				AA000002AA000002AA000002 /* PiSSHManager.swift in Sources */,
+				AA000003AA000003AA000003 /* RaspberryPiManager.swift in Sources */,
+				AA000004AA000004AA000004 /* PiRaspberryTabView.swift in Sources */,
+				AA000005AA000005AA000005 /* OnboardingView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		553194FECB7E1C4EBBAFB6CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				AUTOMATION_APPLE_EVENTS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = PiControl/PiControl.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = KHKG2XN3Y3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = PiControl/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.local.pironman5controller;
+				PRODUCT_NAME = "Pironman5 Controller";
+				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = NO;
+				RUNTIME_EXCEPTION_ALLOW_JIT = NO;
+				RUNTIME_EXCEPTION_ALLOW_UNSIGNED_EXECUTABLE_MEMORY = NO;
+				RUNTIME_EXCEPTION_DEBUGGING_TOOL = NO;
+				RUNTIME_EXCEPTION_DISABLE_EXECUTABLE_PAGE_PROTECTION = NO;
+				RUNTIME_EXCEPTION_DISABLE_LIBRARY_VALIDATION = NO;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D8579749783A718541606A67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				AUTOMATION_APPLE_EVENTS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = PiControl/PiControl.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = KHKG2XN3Y3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = PiControl/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.local.pironman5controller;
+				PRODUCT_NAME = "Pironman5 Controller";
+				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = NO;
+				RUNTIME_EXCEPTION_ALLOW_JIT = NO;
+				RUNTIME_EXCEPTION_ALLOW_UNSIGNED_EXECUTABLE_MEMORY = NO;
+				RUNTIME_EXCEPTION_DEBUGGING_TOOL = NO;
+				RUNTIME_EXCEPTION_DISABLE_EXECUTABLE_PAGE_PROTECTION = NO;
+				RUNTIME_EXCEPTION_DISABLE_LIBRARY_VALIDATION = NO;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		FA9139DD8B03E3F922556BF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FFE2104CCFAB79205AC64460 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		56283EBD6DD86A56CED63937 /* Build configuration list for PBXProject "Pironman5Controller" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA9139DD8B03E3F922556BF8 /* Debug */,
+				FFE2104CCFAB79205AC64460 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAF116FE40D68E4ABB26094B /* Build configuration list for PBXNativeTarget "Pironman5 Controller" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8579749783A718541606A67 /* Debug */,
+				553194FECB7E1C4EBBAFB6CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 46F86FAA6BBF9AC94A7E4595 /* Project object */;
+}
