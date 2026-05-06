@@ -95,7 +95,7 @@ class SSHManager {
         let script = """
 set timeout 30
 log_user 0
-spawn /usr/bin/ssh -T -o ConnectTimeout=15 -p \(cfg.port) \(cfg.username)@\(cfg.resolvedApiHost) \(command.sshEscaped)
+spawn /usr/bin/ssh -T -o ConnectTimeout=15 -o StrictHostKeyChecking=no -p \(cfg.port) \(cfg.username)@\(cfg.resolvedApiHost) \(command.sshEscaped)
 expect {
     -re {[Pp]assword[^:]*:} {
         send "$env(SSH_PASS)\\r"

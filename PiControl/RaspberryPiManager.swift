@@ -24,8 +24,15 @@ class RaspberryPiManager: ObservableObject {
             return
         }
         connectionState = .connecting
-        let out = await ssh("echo pi_ok")
-        if out.contains("pi_ok") {
+        let ok = await withCheckedContinuation { (cont: CheckedContinuation<Bool, Never>) in
+            SSHManager.shared.run(command: "echo ok") { result in
+                switch result {
+                case .success: cont.resume(returning: true)
+                case .failure: cont.resume(returning: false)
+                }
+            }
+        }
+        if ok {
             connectionState = .connected
             await refreshAll()
         } else {

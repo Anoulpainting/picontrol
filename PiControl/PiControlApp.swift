@@ -30,13 +30,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        #if DEBUG
-        showOnboarding()
-        #else
-        if !UserDefaults.standard.bool(forKey: "onboardingCompleted") {
+        if !UserDefaults.standard.bool(forKey: "hideOnboardingOnStartup") {
             showOnboarding()
         }
-        #endif
     }
 
     // MARK: - Onboarding
@@ -80,19 +76,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: - Settings
 
     func showSettings() {
-        // If already open, just bring to front
         if let existing = settingsWindow, existing.isVisible {
-            existing.center()
             existing.makeKeyAndOrderFront(nil)
-            NSApp.activate(ignoringOtherApps: true)
+            existing.center()
             return
         }
-
-        NSApp.setActivationPolicy(.regular)
-
-        // Grab menu bar panel before it potentially loses focus
-        let menuBarPanel = NSApp.windows.first { $0 is NSPanel && $0.isVisible }
-        menuBarPanel?.hidesOnDeactivate = false
 
         let w = NSWindow(
             contentRect: NSRect(x: 0, y: 0, width: 400, height: 100),
@@ -105,8 +93,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         w.appearance = NSAppearance(named: .darkAqua)
         w.backgroundColor = NSColor(red: 0.08, green: 0.11, blue: 0.19, alpha: 1)
         w.level = .floating
+        w.isReleasedWhenClosed = false
 
-        let delegate = SettingsWindowDelegate(menuBarPanel: menuBarPanel)
+        let delegate = SettingsWindowDelegate()
         w.delegate = delegate
         settingsDelegate = delegate
 
@@ -115,9 +104,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }))
         w.contentViewController = controller
 
+        // Positionner à gauche du panel MenuBarExtra
+        if let panel = NSApp.windows.first(where: { $0 is NSPanel && $0.isVisible }),
+           let screen = panel.screen ?? NSScreen.main {
+            let x = max(screen.visibleFrame.minX, panel.frame.minX - 400 - 8)
+            w.setFrameTopLeftPoint(NSPoint(x: x, y: panel.frame.maxY))
+        } else {
+            w.center()
+        }
         w.makeKeyAndOrderFront(nil)
-        NSApp.activate(ignoringOtherApps: true)
-        DispatchQueue.main.async { w.center() }
         settingsWindow = w
     }
 }
@@ -133,15 +128,5 @@ class OnboardingWindowDelegate: NSObject, NSWindowDelegate {
 // MARK: - Settings Window Delegate
 
 class SettingsWindowDelegate: NSObject, NSWindowDelegate {
-    weak var menuBarPanel: NSWindow?
-
-    init(menuBarPanel: NSWindow?) {
-        self.menuBarPanel = menuBarPanel
-    }
-
-    func windowWillClose(_ notification: Notification) {
-        menuBarPanel?.hidesOnDeactivate = true
-        menuBarPanel?.close()
-        NSApp.setActivationPolicy(.accessory)
-    }
+    func windowWillClose(_ notification: Notification) {}
 }

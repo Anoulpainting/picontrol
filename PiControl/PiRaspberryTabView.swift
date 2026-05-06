@@ -148,7 +148,7 @@ struct PiRaspberryTabView: View {
     private var statusText: String {
         switch pi.connectionState {
         case .connected:
-            let host = ConfigManager.shared.config.host
+            let host = ConfigManager.shared.config.resolvedApiHost
             return "Connecté · \(host)"
         case .connecting:   return "Connexion..."
         case .error(let m): return m
@@ -436,7 +436,7 @@ struct PiTerminalSubView: View {
                 Text("$")
                     .font(.system(size: 11, design: .monospaced))
                     .foregroundColor(Color(red: 0.2, green: 0.85, blue: 0.3))
-                TextField("Commande...", text: $command)
+                TextField("", text: $command, prompt: Text("Commande...").foregroundColor(.white.opacity(0.35)))
                     .textFieldStyle(.plain)
                     .font(.system(size: 11, design: .monospaced))
                     .foregroundColor(.white)

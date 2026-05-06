@@ -194,9 +194,11 @@ struct OnboardingView: View {
     private func goBack()  { withAnimation { step -= 1 } }
 
     private func close() {
-        UserDefaults.standard.set(true, forKey: "onboardingCompleted")
         NSApp.keyWindow?.close()
         NSApp.setActivationPolicy(.accessory)
+        if ConfigManager.shared.isSSHConfigured {
+            Task { await RaspberryPiManager.shared.connect() }
+        }
     }
 }
 
@@ -255,7 +257,8 @@ struct OnboardingSSHScreen: View {
     let onBack: () -> Void
     let onDotTap: (Int) -> Void
 
-    @State private var host       = ConfigManager.shared.config.host
+    @State private var host       = ConfigManager.shared.config.resolvedApiHost
+    @State private var apiPort    = String(ConfigManager.shared.config.apiPort)
     @State private var port       = String(ConfigManager.shared.config.port)
     @State private var username   = ConfigManager.shared.config.username
     @State private var authMethod = ConfigManager.shared.config.authMethod
@@ -318,24 +321,31 @@ struct OnboardingSSHScreen: View {
         VStack(alignment: .leading, spacing: 12) {
 
             // Host
-            fieldGroup(label: "Host", icon: "network",
-                       helper: "IP address or hostname of your Raspberry Pi — e.g. 192.168.1.100") {
+            fieldGroup(label: "IP / Host", icon: "network",
+                       helper: "Local IP or hostname — used for both API and SSH") {
                 TextField("192.168.1.100", text: $host)
                     .styledField()
             }
 
-            // Port + Username
+            // API Port + SSH Port
             HStack(alignment: .top, spacing: 12) {
-                fieldGroup(label: "Port", icon: "number", helper: "Default: 22") {
+                fieldGroup(label: "API Port", icon: "antenna.radiowaves.left.and.right", helper: "Pironman5 (34001)") {
+                    TextField("34001", text: $apiPort)
+                        .styledField()
+                }
+                .frame(width: 130)
+
+                fieldGroup(label: "SSH Port", icon: "number", helper: "Default: 22") {
                     TextField("22", text: $port)
                         .styledField()
                 }
-                .frame(width: 100)
+                .frame(width: 110)
+            }
 
-                fieldGroup(label: "Username", icon: "person", helper: "Usually pi or your custom user") {
-                    TextField("pi", text: $username)
-                        .styledField()
-                }
+            // Username
+            fieldGroup(label: "Username", icon: "person", helper: "Usually pi or your custom user") {
+                TextField("pi", text: $username)
+                    .styledField()
             }
 
             // Auth
@@ -439,6 +449,7 @@ struct OnboardingSSHScreen: View {
         var cfg = ConfigManager.shared.config
         cfg.host       = h
         cfg.apiHost    = h
+        cfg.apiPort    = Int(apiPort) ?? 34001
         cfg.port       = Int(port) ?? 22
         cfg.username   = u
         cfg.authMethod = authMethod
@@ -458,6 +469,8 @@ struct OnboardingDoneScreen: View {
     let onDone: () -> Void
     let onBack: () -> Void
     let onDotTap: (Int) -> Void
+
+    @AppStorage("hideOnboardingOnStartup") private var hideOnStartup = false
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -480,12 +493,19 @@ struct OnboardingDoneScreen: View {
     }
 
     private var footer: some View {
-        HStack {
-            Spacer()
-            StepDots(current: 2, total: 3, onTap: onDotTap)
-            Spacer()
-            Button("Launch PiControl", action: onDone)
-                .buttonStyle(OnboardingPrimaryButton())
+        VStack(spacing: 10) {
+            Toggle("Don't show at startup", isOn: $hideOnStartup)
+                .toggleStyle(.checkbox)
+                .font(.system(size: 11))
+                .foregroundColor(dimText)
+
+            HStack {
+                Spacer()
+                StepDots(current: 2, total: 3, onTap: onDotTap)
+                Spacer()
+                Button("Launch PiControl", action: onDone)
+                    .buttonStyle(OnboardingPrimaryButton())
+            }
         }
         .padding(.horizontal, 24)
         .padding(.vertical, 18)

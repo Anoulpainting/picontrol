@@ -5,6 +5,8 @@
     <!-- Cache l'icône du Dock — app menu bar uniquement -->
     <key>LSUIElement</key>
     <true/>
+    <key>CFBundleExecutable</key>
+    <string>Pironman5 Controller</string>
     <key>CFBundleName</key>
     <string>PiControl</string>
     <key>CFBundleDisplayName</key>

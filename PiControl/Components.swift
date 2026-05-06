@@ -8,6 +8,9 @@ struct WindowTransparency: NSViewRepresentable {
             guard let window = view.window else { return }
             window.backgroundColor = .clear
             window.isOpaque = false
+            if let panel = window as? NSPanel {
+                panel.becomesKeyOnlyIfNeeded = false
+            }
         }
         return view
     }

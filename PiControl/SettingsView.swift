@@ -6,8 +6,9 @@ struct SettingsView: View {
     @ObservedObject private var cfg   = ConfigManager.shared
     @ObservedObject private var state = CommandState.shared
 
-    @State private var password     = ""
-    @State private var passwordSaved = false
+    @State private var password      = ""
+    @State private var passwordSaved  = false
+    @State private var editingPassword = false
     @State private var testStatus: String? = nil
     @State private var isTesting    = false
 
@@ -79,11 +80,36 @@ struct SettingsView: View {
                     }
                     if cfg.config.authMethod == .password {
                         row("Mot de passe") {
-                            SecureField(
-                                passwordSaved ? "Mot de passe enregistré" : "Entrez votre mot de passe",
-                                text: $password
-                            )
-                            .styledSettingsField()
+                            if passwordSaved && !editingPassword {
+                                HStack(spacing: 8) {
+                                    Image(systemName: "checkmark.circle.fill")
+                                        .foregroundColor(Color(red: 0.2, green: 0.85, blue: 0.3))
+                                        .font(.system(size: 12))
+                                    Text("Mot de passe enregistré")
+                                        .font(.system(size: 12))
+                                        .foregroundColor(dimText)
+                                    Spacer()
+                                    Button("Modifier") { editingPassword = true }
+                                        .buttonStyle(.plain)
+                                        .font(.system(size: 11))
+                                        .foregroundColor(dimText)
+                                        .padding(.horizontal, 8)
+                                        .padding(.vertical, 4)
+                                        .background(Color.white.opacity(0.08))
+                                        .cornerRadius(5)
+                                }
+                                .padding(.horizontal, 10)
+                                .padding(.vertical, 7)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 6)
+                                        .fill(Color(red: 0.06, green: 0.08, blue: 0.15))
+                                        .overlay(RoundedRectangle(cornerRadius: 6)
+                                            .stroke(Color.white.opacity(0.12), lineWidth: 1))
+                                )
+                            } else {
+                                SecureField("Nouveau mot de passe", text: $password)
+                                    .styledSettingsField()
+                            }
                         }
                     }
                     row("Service") {
@@ -201,6 +227,8 @@ struct SettingsView: View {
         cfg.save()
         if cfg.config.authMethod == .password && !password.isEmpty {
             KeychainHelper.savePassword(password)
+            passwordSaved = true
+            editingPassword = false
         }
         if cfg.isSSHConfigured {
             Task { await RaspberryPiManager.shared.connect() }
