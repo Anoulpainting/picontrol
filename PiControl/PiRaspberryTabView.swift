@@ -269,10 +269,18 @@ struct PiServicesSubView: View {
                 Image(systemName: "magnifyingglass")
                     .font(.system(size: 10))
                     .foregroundColor(dimText)
-                TextField("Filtrer...", text: $search)
-                    .textFieldStyle(.plain)
-                    .font(.system(size: 11))
-                    .foregroundColor(.white)
+                ZStack(alignment: .leading) {
+                    if search.isEmpty {
+                        Text("Filtrer...")
+                            .font(.system(size: 11))
+                            .foregroundColor(.white.opacity(0.35))
+                            .allowsHitTesting(false)
+                    }
+                    TextField("", text: $search)
+                        .textFieldStyle(.plain)
+                        .font(.system(size: 11))
+                        .foregroundColor(.white)
+                }
                 Spacer()
                 Button { Task { await pi.fetchServices() } } label: {
                     Image(systemName: "arrow.clockwise").font(.system(size: 10))
