@@ -4,7 +4,9 @@ macOS menu bar app to control your [Pironman5](https://www.pironman.com/) Raspbe
 
 ![macOS](https://img.shields.io/badge/macOS-13%2B-black) ![License](https://img.shields.io/badge/license-MIT-blue)
 
-[![PiControl Demo](https://img.youtube.com/vi/OWij0sdlIQA/maxresdefault.jpg)](https://www.youtube.com/watch?v=OWij0sdlIQA)
+<a href="https://www.youtube.com/watch?v=OWij0sdlIQA" target="_blank">
+  <img src="thumbnail.png" alt="PiControl Demo" width="100%" />
+</a>
 
 ## Features
 
