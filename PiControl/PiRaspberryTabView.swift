@@ -436,11 +436,19 @@ struct PiTerminalSubView: View {
                 Text("$")
                     .font(.system(size: 11, design: .monospaced))
                     .foregroundColor(Color(red: 0.2, green: 0.85, blue: 0.3))
-                TextField("", text: $command, prompt: Text("Commande...").foregroundColor(.white.opacity(0.35)))
-                    .textFieldStyle(.plain)
-                    .font(.system(size: 11, design: .monospaced))
-                    .foregroundColor(.white)
-                    .onSubmit { execute(command) }
+                ZStack(alignment: .leading) {
+                    if command.isEmpty {
+                        Text("Commande...")
+                            .font(.system(size: 11, design: .monospaced))
+                            .foregroundColor(.white.opacity(0.35))
+                            .allowsHitTesting(false)
+                    }
+                    TextField("", text: $command)
+                        .textFieldStyle(.plain)
+                        .font(.system(size: 11, design: .monospaced))
+                        .foregroundColor(.white)
+                        .onSubmit { execute(command) }
+                }
                 if running {
                     ProgressView().scaleEffect(0.6)
                 } else {
