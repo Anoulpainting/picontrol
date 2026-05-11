@@ -50,7 +50,8 @@ class PiSSHManager {
                     }
 
                 case .key:
-                    let key = cfg.sshKeyPath.isEmpty ? "~/.ssh/id_rsa" : cfg.sshKeyPath
+                    let rawKey = cfg.sshKeyPath.trimmingCharacters(in: .whitespacesAndNewlines)
+                    let key = (rawKey.isEmpty ? "~/.ssh/id_rsa" : rawKey as NSString).expandingTildeInPath
                     process.executableURL = URL(fileURLWithPath: "/usr/bin/ssh")
                     process.arguments = [
                         "-i", key,
@@ -105,9 +106,10 @@ class PiSSHManager {
                         ]
                     }
                 case .key:
+                    let scpKey = (cfg.sshKeyPath.trimmingCharacters(in: .whitespacesAndNewlines) as NSString).expandingTildeInPath
                     process.executableURL = URL(fileURLWithPath: "/usr/bin/scp")
                     process.arguments = [
-                        "-i", cfg.sshKeyPath,
+                        "-i", scpKey,
                         "-o", "StrictHostKeyChecking=no",
                         "-P", "\(cfg.port)",
                         localURL.path,
@@ -158,9 +160,10 @@ class PiSSHManager {
                         ]
                     }
                 case .key:
+                    let dlKey = (cfg.sshKeyPath.trimmingCharacters(in: .whitespacesAndNewlines) as NSString).expandingTildeInPath
                     process.executableURL = URL(fileURLWithPath: "/usr/bin/scp")
                     process.arguments = [
-                        "-i", cfg.sshKeyPath,
+                        "-i", dlKey,
                         "-o", "StrictHostKeyChecking=no",
                         "-P", "\(cfg.port)",
                         "\(cfg.username)@\(host):\(remotePath)",

@@ -70,7 +70,7 @@ class SSHManager {
 
     private func runWithKey(command: String, cfg: PiConfig,
                             completion: @escaping (Result<String, Error>) -> Void) {
-        let keyPath = (cfg.sshKeyPath as NSString).expandingTildeInPath
+        let keyPath = (cfg.sshKeyPath.trimmingCharacters(in: .whitespacesAndNewlines) as NSString).expandingTildeInPath
         log("  → auth par clé: \(keyPath)")
         let process = Process()
         process.executableURL = URL(fileURLWithPath: "/usr/bin/ssh")
